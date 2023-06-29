@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Navbar from 'src/components/navbar/navbar'
+import NavBar from 'src/components/navbar/navbar'
 import Footer from 'src/components/footer/footer'
 
 export default function Document() {
@@ -11,7 +11,7 @@ export default function Document() {
       </Head>
       <body>
         <div className="global-container">
-          <Navbar />
+          <NavBar />
           <Main />
           <Footer />
         </div>
