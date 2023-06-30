@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const tripCard = ({ id, content, canDelete }) => {
+const questionCard = ({ id, content, canDelete }) => {
     return (
         <div>
             <a href={`/questions/${id}`} className={styles.card}>
@@ -11,4 +11,4 @@ const tripCard = ({ id, content, canDelete }) => {
     )
 }
 
-export default tripCard;
+export default questionCard;

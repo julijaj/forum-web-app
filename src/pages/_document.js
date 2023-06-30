@@ -6,7 +6,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Trips</title>
+        <title>Ask.fm</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
