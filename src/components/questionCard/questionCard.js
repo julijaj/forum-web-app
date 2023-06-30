@@ -1,12 +1,12 @@
 import styles from "./styles.module.css";
 
-const tripCard = () => {
+const tripCard = ({ id, content, canDelete }) => {
     return (
         <div>
-        <a href={`/questions/1`} className={styles.card}>
-            <h3>1st question</h3>
-            <p>What is life?</p>
-        </a>
+            <a href={`/questions/${id}`} className={styles.card}>
+                <p>{content}</p>
+            </a>
+            {canDelete && (<button>Delete</button>)}
         </div>
     )
 }
