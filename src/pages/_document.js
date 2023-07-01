@@ -10,11 +10,7 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
-        <div className="global-container">
-          <NavBar />
-          <Main />
-          <Footer />
-        </div>
+        <Main />
         <NextScript />
       </body>
     </Html>
