@@ -18,3 +18,7 @@
     font-size: 30px;
     padding: 45px;
 }
+
+.logo img {
+    max-height: 100%;
+}
