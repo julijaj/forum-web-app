@@ -8,11 +8,11 @@ const Home = () => {
     <div className="global-container">
       <NavBar />
       <main>
-        <div className={styles.filter}>
-          <p>Show all</p>
-          <p>Show answered</p>
-          <p>Show unanswered</p>
-        </div>
+        <ul className={styles.filter}>
+          <li>Show all</li>
+          <li>Show answered</li>
+          <li>Show unanswered</li>
+        </ul>
         <div className={styles.grid}>
           <QuestionCard
             id="1"

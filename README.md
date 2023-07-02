@@ -1,4 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).target="_blank"
 Baigiamasis projektas
 Baigiamoji uzduotis
 Šio projekto metu reikės sukurti internetinį forumą naudojant React, NodeJS Express ir MongoDB arba MySQL. Forumo tikslas - leisti užduoti klausimus, į juos atsakinėti ir žymėti patinkančius arba nepatinkančius atsakymus. Galite įsivaizduoti kažką panašaus į https://stackoverflow.com/questions, tik jums rekės padaryt supaprastintą versiją.
