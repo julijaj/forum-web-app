@@ -1,15 +1,12 @@
 .filter {
-  display: flex;
-  justify-content: center;
   width: 100%;
 }
 
-.filter li {
-  margin-right: 1rem;
+.questioncards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
-
-
 
 
 
