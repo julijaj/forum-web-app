@@ -6,7 +6,7 @@ const questionCard = ({ id, content, canDelete }) => {
             <a href={`/questions/${id}`} className={styles.card}>
                 <p>{content}</p>
             </a>
-            {canDelete && (<button>Delete</button>)}
+            {canDelete && (<button className={styles.button}>Delete</button>)}
         </div>
     )
 }

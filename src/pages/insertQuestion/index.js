@@ -7,12 +7,12 @@ const InsertQuestion = () => {
     <div className="global-container">
     <NavBar />
     <main>
-      <h1>Ask Question!</h1>
+      <h1 className={styles.title}>Ask Question!</h1>
       <div>
-        <input
+        <input className={styles.input}
           placeholder="Write your question..."
         />
-        <button>Submit</button>
+        <button className={styles.button}>Submit</button>
       </div>
     </main>
     <Footer />
