@@ -29,10 +29,10 @@ const Question = () => {
         />
       </div>
       <div>
-        <input 
+        <input className={styles.input}
         placeholder="Write your answer"
         />
-        <button>Submit</button>
+        <button className={styles.button}>Submit</button>
       </div>
     </main>
     <Footer />
