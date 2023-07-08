@@ -4,6 +4,7 @@ import NavBar from 'src/components/navbar/navbar'
 import Footer from 'src/components/footer/footer'
 import { Radio, Spacer } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = () => {
 
@@ -11,9 +12,11 @@ const Home = () => {
 
   const fetchQuestions = async () => {
 
-    const myData = [{ id: 1, questionText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", canDelete: true }, { id: 2, questionText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", canDelete: false }, { id: 3, questionText: "What is life?", canDelete: true }, { id: 4, questionText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", canDelete: false }]
+    const url = `http://localhost:8080/questions/`
+    const response = await axios.get(url);
+    console.log("response", response);
 
-    setQuestions(myData)
+    setQuestions(response.data.questions)
   };
 
   useEffect(() => {
@@ -37,8 +40,8 @@ const Home = () => {
             <div className={styles.questioncards}>
               {questions.map((item) => (
                 <QuestionCard
-                  id={item.id}
-                  content={item.questionText}
+                  id={item._id}
+                  content={item.content}
                   canDelete={item.canDelete}
                 />
               ))}

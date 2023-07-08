@@ -2,8 +2,11 @@ import styles from "./styles.module.css";
 import NavBar from 'src/components/navbar/navbar'
 import Footer from 'src/components/footer/footer'
 import { useState } from "react";
+import axios from "axios";
+import { useRouter } from 'next/router'
 
 const insertQuestion = () => {
+  const router = useRouter()
 
   const [content, setContent] = useState();
 
@@ -13,6 +16,15 @@ const insertQuestion = () => {
     }
 
     console.log(data);
+
+    const url = `http://localhost:8080/questions/`
+    const response = await axios.post(url, data);
+
+    console.log("response", response);
+
+    const redirectUrl = `/`
+
+    router.push(redirectUrl)
   };
 
   return (
@@ -32,5 +44,5 @@ const insertQuestion = () => {
       <Footer />
     </div>
   )
-}
+};
 export default insertQuestion;
