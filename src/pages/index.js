@@ -5,6 +5,7 @@ import Footer from 'src/components/footer/footer'
 import { Radio, Spacer } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import cookieCutter from "cookie-cutter";
 
 const Home = () => {
 
@@ -13,6 +14,8 @@ const Home = () => {
   const fetchQuestions = async () => {
 
     const url = `http://localhost:8080/questions/`
+    const userId = cookieCutter.get('userId')
+    axios.defaults.headers.common['user-id']=userId;
     const response = await axios.get(url);
     console.log("response", response);
 

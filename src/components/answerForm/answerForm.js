@@ -2,6 +2,7 @@ import styles from "./styles.module.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from 'next/router'
+import cookieCutter from "cookie-cutter";
 
 const answerForm = () => {
     const router = useRouter()
@@ -17,12 +18,14 @@ const answerForm = () => {
         console.log(data);
 
         const url = `http://localhost:8080/questions/${questionId}/answers`
+        const userId = cookieCutter.get('userId')
+        axios.defaults.headers.common['user-id'] = userId;
         const response = await axios.post(url, data);
 
         console.log("response", response);
 
         router.reload(window.location.pathname)
-        
+
     };
 
     return (

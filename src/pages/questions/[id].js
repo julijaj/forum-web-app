@@ -6,6 +6,7 @@ import AnswerForm from 'src/components/answerForm/answerForm'
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from 'next/router'
+import cookieCutter from "cookie-cutter";
 
 const Question = () => {
 
@@ -22,6 +23,8 @@ const Question = () => {
     console.log("responseQ", responseQ);
 
     const urlA = `http://localhost:8080/questions/${questionId}/answers`
+    const userId = cookieCutter.get('userId')
+    axios.defaults.headers.common['user-id']=userId;
     const responseA = await axios.get(urlA);
     console.log("responseA", responseA);
 

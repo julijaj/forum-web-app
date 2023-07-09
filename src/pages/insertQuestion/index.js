@@ -4,13 +4,14 @@ import Footer from 'src/components/footer/footer'
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from 'next/router'
+import cookieCutter from "cookie-cutter";
 
 const insertQuestion = () => {
   const router = useRouter()
-
   const [content, setContent] = useState();
-
+  
   const postQuestion = async () => {
+    
     const data = {
       content: content,
     }
@@ -18,6 +19,8 @@ const insertQuestion = () => {
     console.log(data);
 
     const url = `http://localhost:8080/questions/`
+    const userId = cookieCutter.get('userId')
+    axios.defaults.headers.common['user-id']=userId;
     const response = await axios.post(url, data);
 
     console.log("response", response);
