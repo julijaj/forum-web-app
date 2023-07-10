@@ -36,7 +36,7 @@ const Navbar = () => {
                 <img src='https://www.pngmart.com/files/11/Chat-Logo-PNG-Free-Download.png' />
             </div>
             <div>
-                {username && <h3>Hello, {username}!</h3>}
+                {username && <h3 className={styles.greeting}>Hello, {username}!</h3>}
             </div>
             <ul className={styles.list}>
                 <li className={styles.navbutton}>
@@ -46,7 +46,7 @@ const Navbar = () => {
                     <a href="/insertQuestion">Ask Question!</a>
                 </li>
                 <li className={styles.navbutton}>
-                    <button onClick={() => logOut()}>Log Out</button>
+                    <button className={styles.logbutton} onClick={() => logOut()}>Log Out</button>
                 </li>
             </ul>
         </div>

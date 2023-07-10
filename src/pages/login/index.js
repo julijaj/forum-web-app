@@ -1,4 +1,5 @@
 import Footer from 'src/components/footer/footer'
+import styles from "./styles.module.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import cookieCutter from "cookie-cutter";
@@ -28,7 +29,7 @@ const login = () => {
             });
 
         if (response) {
-            const user=response.data.user
+            const user = response.data.user
             login(user._id, user.username);
         }
     }
@@ -49,7 +50,7 @@ const login = () => {
                 }
             });
         if (response) {
-            const user=response.data.user
+            const user = response.data.user
             login(user._id, user.username);
         }
     }
@@ -65,36 +66,40 @@ const login = () => {
 
     return (
         <div>
-            <main>
-                <div>
-                    <h3>Login</h3>
-                    <input
-                        value={usernameLogin}
-                        onChange={(event) => setUsernameLogin(event.target.value)}
-                        placeholder='Username'
-                    />
-                    <input
-                        value={passwordLogin}
-                        onChange={(event) => setPasswordLogin(event.target.value)}
-                        placeholder='Password'
-                        type='password'
-                    />
-                    <button onClick={() => tryLogin()}>Login</button>
-                </div>
-                <div>
-                    <h3>Register</h3>
-                    <input
-                        value={usernameRegister}
-                        onChange={(event) => setUsernameRegister(event.target.value)}
-                        placeholder='Username'
-                    />
-                    <input
-                        value={passwordRegister}
-                        onChange={(event) => setPasswordRegister(event.target.value)}
-                        placeholder='Password'
-                        type='password'
-                    />
-                    <button onClick={() => tryRegister()}>Register</button>
+            <main className={styles.main}>
+                <div className={styles.container}>
+                    <div className={styles.login}>
+                        <div>
+                            <h3 className={styles.title}>Login</h3>
+                            <input className={styles.input}
+                                value={usernameLogin}
+                                onChange={(event) => setUsernameLogin(event.target.value)}
+                                placeholder='Username'
+                            />
+                            <input className={styles.input}
+                                value={passwordLogin}
+                                onChange={(event) => setPasswordLogin(event.target.value)}
+                                placeholder='Password'
+                                type='password'
+                            />
+                            <button className={styles.button} onClick={() => tryLogin()}>Login</button>
+                        </div>
+                    </div>
+                    <div className={styles.register}>
+                        <h3 className={styles.title}>Register</h3>
+                        <input className={styles.input}
+                            value={usernameRegister}
+                            onChange={(event) => setUsernameRegister(event.target.value)}
+                            placeholder='Username'
+                        />
+                        <input className={styles.input}
+                            value={passwordRegister}
+                            onChange={(event) => setPasswordRegister(event.target.value)}
+                            placeholder='Password'
+                            type='password'
+                        />
+                        <button className={styles.button} onClick={() => tryRegister()}>Register</button>
+                    </div>
                 </div>
             </main>
             <Footer />
