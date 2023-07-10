@@ -26,7 +26,8 @@ const Navbar = () => {
     checkUserId();
 
     const logOut = async () => {
-        cookieCutter.set('userId', '', { expires: new Date(0) });
+        cookieCutter.set('userId', '', { expires: new Date(0), path: '/' });
+        cookieCutter.set('username', '', { expires: new Date(0), path: '/' });
         const redirectUrl = `/login`
         router.push(redirectUrl);
     }

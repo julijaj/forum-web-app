@@ -58,8 +58,8 @@ const login = () => {
     const login = async (userId, username) => {
         console.log(userId);
         console.log(username);
-        cookieCutter.set('userId', userId);
-        cookieCutter.set('username', username);
+        cookieCutter.set('userId', userId, { path: '/' });
+        cookieCutter.set('username', username, { path: '/' });
         const redirectUrl = `/`
         router.push(redirectUrl);
     }
